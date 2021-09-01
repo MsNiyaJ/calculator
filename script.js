@@ -25,8 +25,3 @@ function operate(operator, num1, num2){
     else if(operator === 'divide')
         return divide(num1, num2);
 }
-
-console.log(operate('add', 6, 3));      //9
-console.log(operate('subtract', 6, 3)); //3
-console.log(operate('multiply', 6, 3)); //18
-console.log(operate('divide', 6, 3));   //2
