@@ -15,8 +15,8 @@ body{
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 5px 5px 20px 20px;
+    box-shadow: 0 4px 8px 3px darkslategrey;
 }
 
 #screen-wrapper{
