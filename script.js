@@ -11,6 +11,21 @@ const screenTxt = document.querySelector('#screen-text');
 let eq = new Equation();
 
 
+//Add an event listener to each number button
+const numbers = Array.from(document.querySelectorAll('.numbers'));
+numbers.forEach(number => {
+    number.addEventListener('click', () => {
+        display(number.textContent);
+    });
+});
+
+//Numbers are displayed on the screen when a button is clicked
+const display = function(num){
+    if(screenTxt.textContent === '0')
+        screenTxt.textContent = num;
+    else
+        screenTxt.textContent += num;   
+}
 
 const add = function(num1, num2) {
 	return num1 + num2;
