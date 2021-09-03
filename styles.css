@@ -48,3 +48,18 @@ body{
 #screen-text{
     margin-right: 4px;
 }
+
+#buttons{
+    margin-top: 25px;
+    height: 18em;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button{
+    background-color: rgba(150, 155, 159, 0.425);
+    border-radius: 30%;
+    font-size: 25px;
+}
