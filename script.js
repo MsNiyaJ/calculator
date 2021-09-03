@@ -14,6 +14,10 @@ const divide = function(num1, num2) {
 	return num1 / num2;
 };
 
+const negate = function(num){
+    return num * -1;
+}
+
 const percent = function(num) {
     return num / 100;
 }
