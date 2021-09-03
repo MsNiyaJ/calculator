@@ -1,3 +1,17 @@
+class Equation{
+    constructor(){
+        this.operand1 = '';
+        this.operator = '';
+        this.operand2 = '';
+        this.result = '';
+    }
+}
+
+const screenTxt = document.querySelector('#screen-text');    
+let eq = new Equation();
+
+
+
 const add = function(num1, num2) {
 	return num1 + num2;
 };
@@ -27,7 +41,6 @@ const squareroot = function(num) {
 }
 
 const clear = function(){
-    const screenTxt = document.querySelector('#screen-text');
     screenTxt.textContent = '0';
 }
 
@@ -41,4 +54,4 @@ const clear = function(){
 //         return multiply(num1, num2);
 //     else if(operator === 'divide')
 //         return divide(num1, num2);
-// }s
+// }
