@@ -22,6 +22,11 @@ const squareroot = function(num) {
     return Math.sqrt(num);
 }
 
+const clear = function(){
+    const screenTxt = document.querySelector('#screen-text');
+    screenTxt.textContent = '0';
+}
+
 //Calls a function based on the chosen operator
 // function operate(operator, num1, num2){
 //     if(operator === 'add') 
