@@ -14,6 +14,10 @@ const divide = function(num1, num2) {
 	return num1 / num2;
 };
 
+const percent = function(num) {
+    return num % 100;
+}
+
 //Calls a function based on the chosen operator
 function operate(operator, num1, num2){
     if(operator === 'add') 
