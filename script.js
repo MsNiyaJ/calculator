@@ -18,6 +18,10 @@ const percent = function(num) {
     return num / 100;
 }
 
+const squareroot = function(num) {
+    return Math.sqrt(num);
+}
+
 //Calls a function based on the chosen operator
 // function operate(operator, num1, num2){
 //     if(operator === 'add') 
