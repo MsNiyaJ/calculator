@@ -16,15 +16,24 @@ const numbers = Array.from(document.querySelectorAll('.numbers'));
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         display(number.textContent);
+        setOperands(number.textContent);
     });
 });
 
 //Numbers are displayed on the screen when a button is clicked
 const display = function(num){
     if(screenTxt.textContent === '0')
-        screenTxt.textContent = num;    //replaces the initial 0 on the screen
+        screenTxt.textContent = num;            //replaces the initial 0 on the screen
     else
-        screenTxt.textContent += num;   
+        screenTxt.textContent += num;
+}
+
+//Sets all the operands in the equations
+const setOperands = function(num){
+    if(eq.operator === '')
+        eq.operand1 = screenTxt.textContent;    //Sets the 1st operand of the equation, if an operator wasn't pressed yet
+    else
+        eq.operand2 = screenTxt.textContent;    //Sets the 2nd operand of the equation
 }
 
 const add = function(num1, num2) {
