@@ -17,6 +17,7 @@ numbers.forEach(number => {
     number.addEventListener('click', () => {
         display(number.textContent);
         setOperands();
+        console.log(eq);
     });
 });
 
@@ -42,10 +43,19 @@ const setOperands = function(){
 const operators = Array.from(document.querySelectorAll('.operators'));
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
-        togglePress(operator);
-        setOperator(operator.textContent);
+        if(!equationIsSet()){
+            togglePress(operator);
+            setOperator(operator.textContent);
+            console.log(eq);
+        }
     });
 });
+
+//Returns true when the operands and operator are nonempty
+const equationIsSet = function(){
+    const arr = [eq.operand1, eq.operator, eq.operand2];
+    return arr.every((currentValue) => currentValue !== '');
+}
 
 //Adds a style to the pressed operator button
 const togglePress = function(operator){
