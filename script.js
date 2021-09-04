@@ -41,6 +41,7 @@ const operators = Array.from(document.querySelectorAll('.operators'));
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         togglePress(operator);
+        setOperator(operator.textContent);
     });
 });
 
@@ -50,7 +51,6 @@ const togglePress = function(operator){
     removeSiblingPress(operator);
 }
 
-
 //Removes style from other buttons that were pressed previously
 const removeSiblingPress = function(operator){
     for(const op of operators){
@@ -58,6 +58,11 @@ const removeSiblingPress = function(operator){
             op.classList.remove('pressed-btn');
         }
     }
+}
+
+//Set the operator of the equation
+const setOperator = function(operator){
+    eq.operator = operator;
 }
 
 
