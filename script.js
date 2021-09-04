@@ -47,12 +47,12 @@ operators.forEach(operator => {
 //Adds a style to the pressed operator button
 const togglePress = function(operator){
     operator.classList.add('pressed-btn');
-    removePress(operator);
+    removeSiblingPress(operator);
 }
 
 
 //Removes style from other buttons that were pressed previously
-const removePress = function(operator){
+const removeSiblingPress = function(operator){
     for(const op of operators){
         if(op !== operator){
             op.classList.remove('pressed-btn');
