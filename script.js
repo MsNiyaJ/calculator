@@ -22,7 +22,9 @@ numbers.forEach(number => {
 
 //Numbers are displayed on the screen when a button is clicked
 const display = function(num){
-    if(screenTxt.textContent === '0')
+    if(eq.operand1 !== '' && eq.operator !== '')        //if you click a number after choosing an operator
+        screenTxt.textContent = (eq.operand2 += num);   //remove everything from the screen and fill in new numbers
+    else if(screenTxt.textContent === '0')
         screenTxt.textContent = num;            //replaces the initial 0 on the screen
     else
         screenTxt.textContent += num;
