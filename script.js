@@ -101,6 +101,10 @@ function operate(operator, num1, num2){
     console.log(eq);
 }
 
+//Add an event listener to the clear button
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', () => clear());
+
 const add = function(num1, num2) {
 	return num1 + num2;
 };
@@ -130,5 +134,6 @@ const squareroot = function(num) {
 }
 
 const clear = function(){
-    screenTxt.textContent = '0';
+    screenTxt.textContent = '0'; //Reset the screen to 0
+    eq = new Equation();         //Create a new equation
 }
