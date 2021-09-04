@@ -16,7 +16,7 @@ const numbers = Array.from(document.querySelectorAll('.numbers'));
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         display(number.textContent);
-        setOperands(number.textContent);
+        setOperands();
     });
 });
 
@@ -31,7 +31,7 @@ const display = function(num){
 }
 
 //Sets all the operands in the equations
-const setOperands = function(num){
+const setOperands = function(){
     if(eq.operator === '')
         eq.operand1 = screenTxt.textContent;    //Sets the 1st operand of the equation, if an operator wasn't pressed yet
     else
