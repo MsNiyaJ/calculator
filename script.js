@@ -36,6 +36,31 @@ const setOperands = function(num){
         eq.operand2 = screenTxt.textContent;    //Sets the 2nd operand of the equation
 }
 
+//Add an event listener to each operator button
+const operators = Array.from(document.querySelectorAll('.operators'));
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+        togglePress(operator);
+    });
+});
+
+//Adds a style to the pressed operator button
+const togglePress = function(operator){
+    operator.classList.add('pressed-btn');
+    removePress(operator);
+}
+
+
+//Removes style from other buttons that were pressed previously
+const removePress = function(operator){
+    for(const op of operators){
+        if(op !== operator){
+            op.classList.remove('pressed-btn');
+        }
+    }
+}
+
+
 const add = function(num1, num2) {
 	return num1 + num2;
 };
