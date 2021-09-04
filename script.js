@@ -77,6 +77,29 @@ const setOperator = function(operator){
     eq.operator = operator;
 }
 
+//Add an event listener to the equal button
+const equalBtn = document.querySelector('.equalBtn');
+equalBtn.addEventListener('click', () => {
+    removeSiblingPress(-1); //removes all pressed buttons
+    operate(eq.operator, eq.operand1, eq.operand2);
+});
+
+// Calls a math function based on the chosen operator
+function operate(operator, num1, num2){
+    num1 = Number(num1);
+    num2 = Number(num2);
+
+    if(operator === '+') 
+        eq.result = add(num1, num2);
+    else if(operator === '-')
+        eq.result = subtract(num1, num2); 
+    else if(operator === 'x')
+        eq.result = multiply(num1, num2);
+    else if(operator === '÷')
+        eq.result = divide(num1, num2);
+
+    console.log(eq);
+}
 
 const add = function(num1, num2) {
 	return num1 + num2;
@@ -109,15 +132,3 @@ const squareroot = function(num) {
 const clear = function(){
     screenTxt.textContent = '0';
 }
-
-//Calls a function based on the chosen operator
-// function operate(operator, num1, num2){
-//     if(operator === 'add') 
-//         return add(num1, num2);
-//     else if(operator === 'subtract')
-//         return subtract(num1, num2); 
-//     else if(operator === 'multiply')
-//         return multiply(num1, num2);
-//     else if(operator === 'divide')
-//         return divide(num1, num2);
-// }
