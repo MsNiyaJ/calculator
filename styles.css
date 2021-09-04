@@ -67,3 +67,8 @@ button{
 #clear, .operators{
     background-color: #d4a064;
 }
+
+.pressed-btn{
+    border: none;
+    color: white;
+}
