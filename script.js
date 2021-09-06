@@ -16,27 +16,17 @@ const numbers = Array.from(document.querySelectorAll('.numbers'));
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         display(number.textContent);
-        setOperands();
         console.log(eq);
     });
 });
 
-//Numbers are displayed on the screen when a button is clicked
+//Displays numbers on the screen
 const display = function(num){
-    if(eq.operand1 !== '' && eq.operator !== '')        //if you click a number after choosing an operator
-        screenTxt.textContent = (eq.operand2 += num);   //remove everything from the screen and fill in new numbers
-    else if(screenTxt.textContent === '0')
-        screenTxt.textContent = num;            //replaces the initial 0 on the screen
-    else
-        screenTxt.textContent += num;
-}
-
-//Sets all the operands in the equations
-const setOperands = function(){
-    if(eq.operator === '')
-        eq.operand1 = screenTxt.textContent;    //Sets the 1st operand of the equation, if an operator wasn't pressed yet
-    else
-        eq.operand2 = screenTxt.textContent;    //Sets the 2nd operand of the equation
+    if(eq.operator === ''){
+        screenTxt.textContent = (eq.operand1 += num);   //Set operand1 & display it on the screen
+    }else if(eq.operator !== ''){
+        screenTxt.textContent = (eq.operand2 += num);   //Set operand2 & display it on the screen
+    }
 }
 
 //Add an event listener to each operator button
@@ -80,7 +70,7 @@ const setOperator = function(operator){
 //Add an event listener to the equal button
 const equalBtn = document.querySelector('.equalBtn');
 equalBtn.addEventListener('click', () => {
-    removeSiblingPress(-1); //removes all pressed buttons
+    removeSiblingPress(-1);     //removes all pressed buttons
     operate(eq.operator, eq.operand1, eq.operand2);
 });
 
@@ -134,6 +124,7 @@ const squareroot = function(num) {
 }
 
 const clear = function(){
+    removeSiblingPress(-1);
     screenTxt.textContent = '0'; //Reset the screen to 0
     eq = new Equation();         //Create a new equation
 }
