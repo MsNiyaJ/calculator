@@ -15,6 +15,12 @@ let eq = new Equation();
 const numbers = Array.from(document.querySelectorAll('.numbers'));
 numbers.forEach(number => {
     number.addEventListener('click', () => {
+        
+        //Create a new equation after a result was displayed and a number was clicked
+        if(eq.result.length !== 0){
+            eq = new Equation();
+        }
+
         display(number.textContent);
         console.log(eq);
     });
