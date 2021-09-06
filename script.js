@@ -129,6 +129,9 @@ const multiply = function(num1, num2) {
 };
 
 const divide = function(num1, num2) {
+    //If the denominator is 0, return Not a Number
+    if(num2 === 0)
+        return 'Not a Number';
 	return num1 / num2;
 };
 
