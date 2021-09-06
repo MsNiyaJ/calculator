@@ -39,8 +39,19 @@ operators.forEach(operator => {
         if(!equationIsSet()){
             togglePress(operator);
             setOperator(operator.textContent);
-            console.log(eq);
+        }else{
+            operate(eq.operator, eq.operand1, eq.operand2);
+            display(eq.result);
+
+            //Set the previous result as operand1 in the new equation
+            let result = eq.result;
+            eq = new Equation();
+            eq.operand1 = result;
+
+            togglePress(operator);
+            setOperator(operator.textContent);
         }
+        console.log(eq);
     });
 });
 
