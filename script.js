@@ -22,7 +22,10 @@ numbers.forEach(number => {
 
 //Displays numbers on the screen
 const display = function(num){
-    if(eq.operator === ''){
+    if(eq.result !== ''){
+        screenTxt.textContent = eq.result;              //Display the result of the equation
+    }
+    else if(eq.operator === ''){
         screenTxt.textContent = (eq.operand1 += num);   //Set operand1 & display it on the screen
     }else if(eq.operator !== ''){
         screenTxt.textContent = (eq.operand2 += num);   //Set operand2 & display it on the screen
@@ -72,6 +75,7 @@ const equalBtn = document.querySelector('.equalBtn');
 equalBtn.addEventListener('click', () => {
     removeSiblingPress(-1);     //removes all pressed buttons
     operate(eq.operator, eq.operand1, eq.operand2);
+    display(eq.result);
 });
 
 // Calls a math function based on the chosen operator
